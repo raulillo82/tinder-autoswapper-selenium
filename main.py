@@ -13,7 +13,7 @@ url = "https://tinder.com"
 driver.get(url)
 
 #Reject cookies
-css_selector_reject_cookies = "#s-547617529 > div > div.Pos\(f\).Start\(0\).End\(0\).Z\(2\).Bxsh\(\$bxsh-4-way-spread\).B\(0\).Bgc\(\$c-ds-background-primary\).C\(\$c-ds-text-secondary\) > div > div > div.D\(f\)--ml > div:nth-child(2) > button > div.w1u9t036 > div.l17p5q9z"
+css_selector_reject_cookies = "div > div.Pos\(f\).Start\(0\).End\(0\).Z\(2\).Bxsh\(\$bxsh-4-way-spread\).B\(0\).Bgc\(\$c-ds-background-primary\).C\(\$c-ds-text-secondary\) > div > div > div.D\(f\)--ml > div:nth-child(2) > button > div.w1u9t036 > div.l17p5q9z"
 reject_cookies_button = driver.find_element(By.CSS_SELECTOR,
                                             value=css_selector_reject_cookies)
 reject_cookies_button.click()
@@ -24,7 +24,7 @@ log_in.click()
 
 #Click on log in with fb
 sleep(3)
-log_in_fb_css = "#s2018968691 > main > div > div > div.Ta\(c\).H\(100\%\).D\(f\).Fxd\(c\).Pos\(r\) > div > div > div.H\(100\%\).D\(f\).Fxd\(c\) > div.Mt\(a\) > span > div:nth-child(2) > button > div.w1u9t036 > div.l17p5q9z > div > div"
+log_in_fb_css = "main > div > div > div.Ta\(c\).H\(100\%\).D\(f\).Fxd\(c\).Pos\(r\) > div > div > div.H\(100\%\).D\(f\).Fxd\(c\) > div.Mt\(a\) > span > div:nth-child(2) > button > div.w1u9t036 > div.l17p5q9z > div > div"
 log_in_fb_button = driver.find_element(By.CSS_SELECTOR,
                                              value=log_in_fb_css)
 log_in_fb_button.click()
