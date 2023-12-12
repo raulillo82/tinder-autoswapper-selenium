@@ -73,12 +73,16 @@ for _ in range(100):
         body = driver.find_element(By.CSS_SELECTOR, "body")
         #Keyboard right key has the same effect as clicking "like" green heart
         body.send_keys(Keys.RIGHT)
-    #In case it didn't have time to load the next choice
-    except NoSuchElementException:
-        sleep(2)
     #In case there's a match
     except ElementClickInterceptedException:
-        print("There was a match!")
-        match_popup = driver.find_element_by_css_selector(".itsAMatch a")
-        match_popup.click()
+        try:
+            #Click on "back to tinder"
+            match_popup = driver.find_element_by_css_selector(".itsAMatch a")
+            #Try this xpath: "/html/body/div[2]/div/div/button[2]/span"
+            #Will probably also work to dismiss location. Needs testing
+            match_popup.click()
+            print("There was a match!")
+        #In case it didn't have time to load the next choice
+        except NoSuchElementException:
+            sleep(2)
 driver.quit()
